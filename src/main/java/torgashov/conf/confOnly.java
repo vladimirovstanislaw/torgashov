@@ -6,10 +6,8 @@ public class confOnly {
  #Git
  
  git pull
- 
- 
- cd C:/Users/svladimirov/eclipse-workspace/ru.badyavina.www
   
+ cd C:/Users/svladimirov/eclipse-workspace/torgashov
  git add . 
  git reset -- 'main/resources/other_app_bad.json'
 
@@ -20,7 +18,7 @@ public class confOnly {
  
  
  #maven
- cd C:\Users\svladimirov\eclipse-workspace\ru.badyavina.www
+ cd C:/Users/svladimirov/eclipse-workspace/torgashov
  mvn clean compile assembly:single
  
 
