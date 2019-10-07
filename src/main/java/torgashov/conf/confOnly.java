@@ -13,7 +13,7 @@ public class confOnly {
 
  
  
- git commit -m  "Done" 
+ git commit -m  "Done J2SE 6" 
  git push -u origin master
  
  

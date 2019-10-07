@@ -16,7 +16,7 @@ import torgashov.send.Sender;
 
 public class Runable {
 
-	private static final String PathToNomenclature = "C:\\vianor_stock\\Nomeclature";
+	//private static final String PathToNomenclature = "C:\\vianor_stock\\Nomeclature";
 
 	public static void main(String[] args) throws InterruptedException, IOException, GeneralSecurityException {
 		if (args.length != 0) {
@@ -39,7 +39,7 @@ public class Runable {
 			GmailQuickstart gmail = new GmailQuickstart(pathToSaveFile, emailProvider, idEmailInSubj);
 
 			GmailQuickstart.clearFolder(folderToSave);// очищаем папку provider'a
-			GmailQuickstart.clearFolder(new File(PathToNomenclature));// очищаем папку номенклатуры
+			//GmailQuickstart.clearFolder(new File(PathToNomenclature));// очищаем папку номенклатуры
 
 			gmail.run();
 
