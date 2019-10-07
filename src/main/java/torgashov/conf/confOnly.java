@@ -9,7 +9,7 @@ public class confOnly {
   
  cd C:/Users/svladimirov/eclipse-workspace/torgashov
  git add . 
- git reset -- 'main/resources/other_app_bad.json'
+ git reset -- 'main/resources/*'
 
  
  

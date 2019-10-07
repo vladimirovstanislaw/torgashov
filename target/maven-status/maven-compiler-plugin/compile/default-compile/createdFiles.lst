@@ -1,3 +1,8 @@
+torgashov\parsers\MoySkladParser.class
 torgashov\conf\confOnly.class
+torgashov\gmail\GmailQuickstart.class
+torgashov\rows\MoySkladRow.class
+torgashov\conf\Runable$1.class
+torgashov\files\Upload.class
 torgashov\send\Sender.class
 torgashov\conf\Runable.class

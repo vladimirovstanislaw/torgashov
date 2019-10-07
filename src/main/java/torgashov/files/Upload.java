@@ -3,6 +3,7 @@ package torgashov.files;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Map;
 
 import torgashov.rows.MoySkladRow;
 
@@ -67,8 +68,13 @@ public class Upload {
 	public void writeFiles() throws IOException {
 		if (allDataMap != null) {
 
-			allDataMap.forEach((k, v) -> finalData += k + semilicon + "" + semilicon + "" + semilicon + "" + semilicon
-					+ v.getPrice() + semilicon + v.getLeftOver() + semilicon + dayToDelivery + n);
+			for (Map.Entry<String, MoySkladRow> entry : allDataMap.entrySet()) {
+				String key = entry.getKey();
+				MoySkladRow value = entry.getValue();
+				finalData += key + semilicon + "" + semilicon + "" + semilicon + "" + semilicon + value.getPrice()
+						+ semilicon + value.getLeftOver() + semilicon + dayToDelivery + n;
+
+			}
 			FileOutputStream outputStreamOne = new FileOutputStream(fileNameOne);
 			FileOutputStream outputStreamTwo = new FileOutputStream(fileNameTwo);
 
