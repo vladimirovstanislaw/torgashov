@@ -71,8 +71,19 @@ public class Upload {
 			for (Map.Entry<String, MoySkladRow> entry : allDataMap.entrySet()) {
 				String key = entry.getKey();
 				MoySkladRow value = entry.getValue();
-				finalData += key + semilicon + "" + semilicon + "" + semilicon + "" + semilicon + value.getPrice()
-						+ semilicon + value.getLeftOver() + semilicon + dayToDelivery + n;
+				int price = 0, leftover = 0;
+				try {
+					price = Integer.parseInt(value.getPrice());
+					leftover = Integer.parseInt(value.getLeftOver());
+					if (price != 0 && price > 0 && leftover > 0) {
+
+						finalData += key + semilicon + "" + semilicon + "" + semilicon + "" + semilicon + price
+								+ semilicon + leftover + semilicon + dayToDelivery + n;
+
+					}
+				} catch (Exception ex) {
+
+				}
 
 			}
 			FileOutputStream outputStreamOne = new FileOutputStream(fileNameOne);

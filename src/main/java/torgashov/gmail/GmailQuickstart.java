@@ -39,7 +39,7 @@ public class GmailQuickstart {
 
 	private static final String APPLICATION_NAME = "Gmail API Java Quickstart";
 	private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
-	private static final String TOKENS_DIRECTORY_PATH = "C:/vianor_stock/tokens";
+	private static String TOKENS_DIRECTORY_PATH = null;
 	private static final List<String> list = new ArrayList<String>(
 			Arrays.asList(GmailScopes.GMAIL_LABELS, GmailScopes.GMAIL_READONLY, GmailScopes.GMAIL_MODIFY));
 
@@ -70,6 +70,10 @@ public class GmailQuickstart {
 
 		return new AuthorizationCodeInstalledApp(flow, receiver).authorize("user");
 
+	}
+
+	public void setTokenDirectory(String directory) {
+		TOKENS_DIRECTORY_PATH = directory;
 	}
 
 	public void run() throws IOException, GeneralSecurityException {

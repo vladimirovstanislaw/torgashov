@@ -16,8 +16,15 @@ import torgashov.send.Sender;
 
 public class Runable {
 
-	//private static final String PathToNomenclature = "C:\\vianor_stock\\Nomeclature";
+	// private static final String PathToNomenclature =
+	// "C:\\vianor_stock\\Nomeclature";
 
+	/**
+	 * @param args
+	 * @throws InterruptedException
+	 * @throws IOException
+	 * @throws GeneralSecurityException
+	 */
 	public static void main(String[] args) throws InterruptedException, IOException, GeneralSecurityException {
 		if (args.length != 0) {
 
@@ -38,8 +45,11 @@ public class Runable {
 
 			GmailQuickstart gmail = new GmailQuickstart(pathToSaveFile, emailProvider, idEmailInSubj);
 
+			gmail.setTokenDirectory(path_from + "\\tokens");
+
 			GmailQuickstart.clearFolder(folderToSave);// очищаем папку provider'a
-			//GmailQuickstart.clearFolder(new File(PathToNomenclature));// очищаем папку номенклатуры
+			// GmailQuickstart.clearFolder(new File(PathToNomenclature));// очищаем папку
+			// номенклатуры
 
 			gmail.run();
 
@@ -59,11 +69,13 @@ public class Runable {
 					path_to + "\\" + fileNameUploadSecond, moySkladMap);
 			upload.writeFiles();
 
-			Sender sender = new Sender();
+			Sender sender = new Sender();// 30 seconds timeout
 			sender.setData(path_from, fileNameUploadFirst);
 			sender.send();
 			sender.setData(path_from, fileNameUploadSecond);
 			sender.send();
+		} else {
+			System.out.println("Not enough args");
 		}
 	}
 
